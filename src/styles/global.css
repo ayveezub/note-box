@@ -1,0 +1,56 @@
+@import "colors.css";
+
+:root {
+  --line-height-iosevka: 1.4;
+  --font-size-default: 1.125rem;
+}
+
+html,
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+  font-family: var(--font-iosevka-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--font-size-default);
+
+  line-height: var(--line-height-iosevka);
+  text-align: left;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+main {
+  margin: 0 auto;
+  max-width: min(65ch, 100%);
+  background-color: var(--color-content-bg);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  transition: all 0.2s linear;
+}
+
+a:link {
+  color: var(--color-link-fg);
+}
+
+a:visited {
+  color: var(--color-link-visited-fg);
+}
+
+a:hover {
+  color: var(--color-link-visited-fg);
+}
+
+ul {
+  list-style: none;
+}

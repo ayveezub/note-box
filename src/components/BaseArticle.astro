@@ -1,0 +1,35 @@
+---
+import { render } from 'astro:content'
+
+const { note } = Astro.props
+const { Content } = await render(note)
+---
+
+<article>
+  <h1>{note.data.title}</h1>
+  <Content />
+</article>
+
+<style is:global>
+  article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  article > * {
+    padding: 0 1rem;
+  }
+
+  article ul {
+    list-style-position: outside;
+  }
+
+  article ul li {
+    margin-left: 1.5rem;
+    padding-left: 0.5rem;
+  }
+
+  article ul li::marker {
+    content: "⋄";
+  }
+</style>

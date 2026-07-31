@@ -1,0 +1,14 @@
+:root {
+  --blue-shiny-teal: #00afb5;
+  --blue-subtle-purple: #d7cde1;
+  --blue-alayna: #7a79b7;
+
+  --white-cararra: #f0eee9;
+  --black-liquorice: #22181c;
+
+  --color-bg: var(--blue-subtle-purple);
+  --color-content-bg: var(--white-cararra);
+  --color-fg: var(--black-liquorice);
+  --color-link-fg: var(--blue-alayna);
+  --color-link-visited-fg: var(--blue-shiny-teal);
+}

@@ -1,0 +1,20 @@
+---
+import { getNotes } from '../../utils' 
+import BaseArticle from '../../components/BaseArticle.astro'
+import Layout from '../../layouts/Layout.astro'
+
+export const getStaticPaths = async () => {
+  const allNotes = await getNotes()
+
+  return allNotes.map((note) => ({
+    params: { id: note.id },
+    props: { note },
+  }))  
+}
+
+const { note } = Astro.props
+---
+
+<Layout>
+  <BaseArticle note={note} />
+</Layout>

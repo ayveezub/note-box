@@ -1,0 +1,46 @@
+---
+import '../styles/colors.css'
+---
+
+<nav class="navbar">
+  <a href={`${import.meta.env.BASE_URL}`}>Home</a>
+  <a href={`${import.meta.env.BASE_URL}/recent-notes`}>Recent Notes</a>
+</nav>
+
+<style is:global>
+  .navbar {
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    max-width: min(65ch, 100%);
+
+    position: sticky;
+    top: 0;
+
+    text-align: center;
+  }
+
+  .navbar > a {
+    display: block;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+
+    border-style: solid;
+    border-width: thin;
+    border-color: var(--color-link-fg);
+    border-radius: 10% / 30%;
+  }
+
+  .navbar > a:first-child {
+    margin-right: auto;
+  }
+
+  .navbar > a:visited {
+    color: var(--color-link-fg);
+  }
+
+  .navbar > a:hover {
+    border-color: var(--color-link-visited-fg);
+    color: var(--color-link-visited-fg);
+  }
+</style>
