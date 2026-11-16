@@ -1,0 +1,3 @@
+# local scratch only — keep this file, ignore the rest
+*
+!.gitignore

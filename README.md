@@ -1,9 +1,9 @@
 # note-box
 
-A personal knowledge base with fast search.
+A personal knowledge base of tagged markdown notes.
 
 - Client-side only, hosted on GitHub Pages
-- Fuzzy search bar that focuses immediately on page load
+- Planned: fuzzy search bar that focuses immediately on page load
 - Posts are tagged markdown files, added via Git commit
 - Each post has its own URL
 - TUI browsers supported
@@ -12,11 +12,12 @@ A personal knowledge base with fast search.
 
 ```bash
 npm install
-npm run dev        # start dev server (background)
-astro dev stop     # stop the background server
-npm run build      # production build
-npm run lint       # run eslint
-npm run preview    # preview the production build
+npm run dev              # start dev server (foreground)
+astro dev --background   # start dev server in background
+astro dev stop           # stop the background server
+npm run build            # production build
+npm run lint             # run eslint
+npm run preview          # preview the production build
 ```
 
 ## Adding a post
@@ -28,6 +29,7 @@ npm run preview    # preview the production build
 ## Tech Stack
 
 - Astro (SSG)
-- Vanilla JS + MiniSearch (search)
+- Vanilla JS
 - Native CSS
 - GitHub Actions (CI/CD)
+- Planned: MiniSearch (fuzzy search)

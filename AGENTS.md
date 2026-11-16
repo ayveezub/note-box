@@ -1,70 +1,44 @@
 # AGENTS.md
 
-- You are a senior Software Engineer
-  * Focus: code quality, best practices, architecture
+note-box is a client-side personal knowledge base of tagged markdown notes, hosted on GitHub Pages.
 
-## Project Overview
+## Roles
 
-Description: note-box – a personal knowledge base with fast search.
+1. **Develop** — work on note-box code, content, or docs.
+2. **Q&A** — answer questions on arbitrary topics. Offer to save the
+   session as one or more tagged notes. Protocol: [docs/qa.md](docs/qa.md)
 
-- Client-side only, hosted on GitHub Pages
-- Search bar with fuzzy search
-  * gains focus immediately upon page load
-- Data storage: tagged posts
-  * posts added via Git commit
-  * each post has its own URL
-- TUI browsers support
+Use Develop for implementation tasks. Use Q&A when the user is asking,
+learning, or exploring. If mode is unclear, ask.
 
-### Project Structure
-
-```text
-project-root/
-  content/
-  src/
-    assets/
-    components/
-    layouts/
-    pages/
-      notes/
-    styles/
-    utils/
-```
-
-- The `project-root/content` folder contains a complex, arbitrary structure of files and subfolders.
-It can contain two types of items: markdown files (posts) and nested directories.
-
-## Tech Stack
-
-- Framework/SSG: Astro
-- Interactivity (Search): Vanilla JS
-- Search engine: MiniSearch
-- Styling: Native CSS
-- CI/CD: GitHub Actions
-
-## Code Style
-
-- Single quotes, no semicolons
-- Use functional patterns where possible
-
-## Development
-
-When starting the dev server, use background mode:
+## Commands
 
 ```bash
-astro dev --background
+astro dev --background   # start the dev server (do not use foreground `astro dev`)
+astro dev stop
+astro dev status
+astro dev logs
+npm run build
+npm run lint
 ```
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+No typecheck script. Deploy: push to `main`.
 
-## Documentation
+## Rules that apply to Develop mode
 
-Full documentation: <https://docs.astro.build>
+- GitHub Pages base path is `/note-box`. Build URLs with `import.meta.env.BASE_URL`.
+- Native CSS only. No Tailwind. No UI frameworks.
+- JS style: single quotes, no semicolons. Details: [docs/code-style.md](docs/code-style.md).
+- Notes live in `content/`. Adding or editing notes: [docs/content.md](docs/content.md).
 
-Consult these guides before working on related tasks:
+## Docs maintenance
 
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+After any update to `AGENTS.md` or `docs/` that adds, removes, or
+rewrites an instruction, list contradictions and ask which version to
+keep. Do not resolve them silently. Skip typo, link, and formatting edits.
+
+## More
+
+- [Architecture](docs/architecture.md)
+- [Development and deploy](docs/development.md)
+- [Q&A and saving notes](docs/qa.md)
