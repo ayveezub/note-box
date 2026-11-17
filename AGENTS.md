@@ -31,6 +31,18 @@ No typecheck script. Deploy: push to `main`.
 - JS style: single quotes, no semicolons. Details: [docs/code-style.md](docs/code-style.md).
 - Notes live in `content/`. Adding or editing notes: [docs/content.md](docs/content.md).
 
+## Commit messages
+
+After changing tracked files in a git-tracked directory, recommend a
+commit message. Do not `git commit` unless the user asks. Skip the
+recommendation when no tracked files changed (including `docs/temp/`).
+
+Use Conventional Commits: `<type>[optional scope]: <short description>`
+
+- Develop changes: `feat`, `fix`, `docs`, `chore`, `refactor`, ...
+- Q&A saved notes: `<type>` is `notes`
+  (e.g. `notes: add firefox TLS fallback`).
+
 ## Docs maintenance
 
 After any update to `AGENTS.md` or `docs/` that adds, removes, or
